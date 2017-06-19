@@ -1,72 +1,28 @@
-/*function initMap() {
-  var myLatLng = document.getElementById("origen").value;
-  var destination = document.getElementById("destino").value;
+      function initMap() {
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 7,
+          center: {lat: 41.85, lng: -87.65}
+        });
+        directionsDisplay.setMap(map);
 
-  var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: {lat: -9.1191427, lng: -77.0349046},
-    mapTypeControl:false,
-    zommControl:false,
-    streetViewControl:false
-  });
+       
+        document.getElementById("ruta").addEventListener("click", function(){
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+      });
 
-  function buscar(){
-  var service = new google.maps.DistanceMatrixService(funcionExito, callback);
-  service.getDistanceMatrix(
-  {
-}
-
-      document.getElementById("encuentrame").addEventListener("click",buscar);
-        var myLatLng,destination;
-
-  
-    var funcionExito = function(posicion) {
-    position: {lat:myLatLng, lng:destination},
-    travelMode: 'DRIVING',
-    map: map,
-    avoidHighways: Boolean,
-    avoidTolls: Boolean,
-    title: 'Hello World!',
-  }, callback);
-    
-  function callback(response, status) {
-  // See Parsing the Results for
-  // the basics of a callback function.
-}
-}
-*/
-
-
-function initMap() {
-  var myLatLng = document.getElementById("origen").value;
-  var destination = document.getElementById("destino").value;
-
-  var map = new google.maps.Map(document.getElementById("map"), {
-  center: {lat: 55.53, lng: 9.4},
-  zoom: 5
-  });
-
-
-   document.getElementById("ruta").addEventListener("click", function() {
-          getDistanceMatrix(myLatLng, destination);
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        directionsService.route({
+          origin: document.getElementById("origen").value,
+          destination: document.getElementById("destino").value,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
         });
       }
-
-
-
-var service = new google.maps.DistanceMatrixService();
-service.getDistanceMatrix(
-  {
-    origins: myLatLng,
-    destinations: destination,
-    travelMode: 'DRIVING',
-    drivingOptions: DrivingOptions,
-    avoidHighways: Boolean,
-    avoidTolls: Boolean,
-  }, callback);
-
-function callback(response, status) {
-  // See Parsing the Results for
-  // the basics of a callback function.
-}
-}
+    }

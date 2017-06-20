@@ -4,7 +4,7 @@
 }
 
 body{
-	background-image: url(../img/imagen-bicicleta.jpg);
+	background-image: url(../img/bici.jpg);
 }
 
 
@@ -28,9 +28,15 @@ button{
 	margin-left: 104px;
 }
 
+#encuentrame{
+	margin-top: 30px;
+    margin-left: 123px;
+}
+
 .input-and-label{
 	display: block;
-	font-weight: bolder;
+	background-color: rgba(255, 178, 40, 0.61);
+    text-align: center;
 }
 
 .form-group{
@@ -42,7 +48,22 @@ button{
 }
 
 .contenedor-inputs{
-    left: 153px;
-    color: rgb(250, 174, 39);
+    left: 125px;
+    color: #264f63;
     padding-top: 10px;
+    font-size: 17px;
+}
+
+.text{
+	padding: 0 20px;
+    margin-left: 22px;
+}
+
+.boton-ruta{
+    padding: 17px;
+    padding-left: 62px;
+}
+
+#ruta{
+	padding: 9px 23px;
 }

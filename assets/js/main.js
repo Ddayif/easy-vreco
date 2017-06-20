@@ -40,10 +40,12 @@
     latitud = posicion.coords.latitude;
     longitud = posicion.coords.longitude;
 
+    var image = "https://image.flaticon.com/icons/png/128/384/384144.png";
     var miUbicacion = new google.maps.Marker({
       position: {lat:latitud, lng:longitud},
       animation: google.maps.Animation.DROP,
-      map: map
+      map: map,
+      icon: image
     });
 
   map.setZoom(17);
@@ -53,6 +55,28 @@
   var funcionError = function (error) {
   alert("Tenemos un problema con encontrar tu ubicacion");
   }
+
+  var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
 }
   
 

@@ -15,9 +15,9 @@
 					<button id="encuentrame">Encuéntrame</button>
 				</div>
 			
-				<div class="col-md-3 col-sm-12 contenedor-inputs contenedor-primer-input">
+				<div class="col-md-3 col-sm-12 contenedor-inputs contenedor-primer-input" id="locationField">
 					<label class="input-and-label origen">Origen</label>
-					<input type="text" id="origen" placeholder="Introduce una ubicación">
+					<input type="text" id="autocomplete"  id="origen" placeholder="Introduce una ubicación">
 				</div>
 				<div class="col-md-3 col-sm-12 contenedor-inputs contenedor-segundo-input">
 					<label class="input-and-label destino">Destino</label>
@@ -35,9 +35,11 @@
 			</div>
 		</div>
 	</section>
+
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDckVKAXTLcK1Su2L-1CD5iIFUlX7IDtJ4&callback=initMap&libraries=places"
+        ></script>
+
 		
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDckVKAXTLcK1Su2L-1CD5iIFUlX7IDtJ4&callback=initMap&libraries=places">
-		</script>	
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA712mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="assets/js/main.js"></script>
 </body>

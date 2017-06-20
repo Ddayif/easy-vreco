@@ -10,26 +10,26 @@
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 <body>
-	<section class="container">
+	<section class="container-fluid">
 			<div class="row form-group">
 				<div class="col-md-3 col-sm-12 contenedor-primer-boton">
 					<button id="encuentrame">Encuéntrame</button>
 				</div>
 			
 				<div class="col-md-3 col-sm-12 contenedor-inputs contenedor-primer-input" id="locationField">
-					<label class="input-and-label origen">Origen</label>
-					<input type="text" class="autocomplete"  id="origen" placeholder="Introduce una ubicación">
+					<label class="input-and-label">Origen</label>
+					<input type="text" class="text-origen" id="origen" placeholder="Introduce una ubicación">
 				</div>
 				<div class="col-md-3 col-sm-12 contenedor-inputs contenedor-segundo-input">
-					<label class="input-and-label destino">Destino</label>
-					<input type="text" id="destino" placeholder="Introduce una ubicación">
+					<label class="input-and-label">Destino</label>
+					<input type="text" class="text-destino" id="destino" placeholder="Introduce una ubicación">
 				</div>
 				<div class="col-md-3 col-sm-12 boton-ruta">
 					<button id="ruta">Ruta</button>
 				</div>
 			</div>
 	</section>
-	<section class="container-fluid">
+	<section class="container maps">
 		<div class="row">
 			<div class="col-md-12 col-sm-12" id="map">
 				

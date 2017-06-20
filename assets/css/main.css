@@ -3,6 +3,9 @@
 	padding: 0;
 }
 
+body{
+	background-image: url(../img/imagen-bicicleta.jpg);
+}
 
 
 #map{
@@ -27,6 +30,7 @@ button{
 
 .input-and-label{
 	display: block;
+	font-weight: bolder;
 }
 
 .form-group{
@@ -39,4 +43,6 @@ button{
 
 .contenedor-inputs{
     left: 153px;
+    color: rgb(250, 174, 39);
+    padding-top: 10px;
 }
